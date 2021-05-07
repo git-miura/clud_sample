@@ -15,6 +15,11 @@ class UsersController < ApplicationController
     redirect_to action: :index
   end
 
+  #詳細情報を表示するアクション
+  def show
+    @user = User.find(params[:id])
+  end
+
   #更新を行うためのアクションゲーム
   def update
     user = User.find(params[:id])
