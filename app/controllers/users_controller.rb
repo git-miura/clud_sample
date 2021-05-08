@@ -15,6 +15,10 @@ class UsersController < ApplicationController
     redirect_to action: :index
   end
 
+  def edit
+    @user = User.find(params[:id])
+  end
+
   #更新を行うためのアクションゲーム
   def update
     user = User.find(params[:id])
@@ -27,10 +31,6 @@ class UsersController < ApplicationController
     user = User.find(params[:id])
     user.delete
     redirect_to action: :index
-  end
-
-  def edit
-    @user = User.find(params[:id])
   end
 
   #Strong Parameter データベースに登録するデータを制限
